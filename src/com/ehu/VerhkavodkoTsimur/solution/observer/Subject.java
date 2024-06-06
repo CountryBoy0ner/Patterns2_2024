@@ -1,4 +1,4 @@
-package compoiteStrategy.observer;
+package com.ehu.VerhkavodkoTsimur.solution.observer;
 
 public interface Subject {
     void addObserver(Observer observer);

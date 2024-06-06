@@ -1,13 +1,13 @@
-package main;
+package com.ehu.VerhkavodkoTsimur.main;
 
-import compoiteStrategy.composite.task.impl.CompositeProject;
-import compoiteStrategy.strategy.Strategy;
-import compoiteStrategy.strategy.impl.AgileStrategy;
-import compoiteStrategy.strategy.impl.RUPStrategy;
-import compoiteStrategy.strategy.impl.SpiralStrategy;
-import compoiteStrategy.strategy.impl.WaterfallStrategy;
-import compoiteStrategy.composite.task.impl.TaskType;
-import compoiteStrategy.composite.task.impl.Task;
+import com.ehu.VerhkavodkoTsimur.solution.composite.impl.CompositeProject;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.impl.AgileStrategy;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.impl.RUPStrategy;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.impl.SpiralStrategy;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.impl.WaterfallStrategy;
+import com.ehu.VerhkavodkoTsimur.solution.composite.impl.TaskType;
+import com.ehu.VerhkavodkoTsimur.solution.composite.impl.Task;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,16 +1,16 @@
-package compoiteStrategy.composite.task.impl;
+package com.ehu.VerhkavodkoTsimur.solution.composite.impl;
 
-import compoiteStrategy.composite.ProjectComponent;
-import compoiteStrategy.observer.Observer;
-import compoiteStrategy.observer.Subject;
-import compoiteStrategy.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.composite.ProjectComponent;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Subject;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class CompositeProject implements ProjectComponent, Observer, Subject {
-    private boolean done = false;
+    private boolean done;
     private long id;
     private List<Observer> observers = new ArrayList<>();
     private Strategy strategy;

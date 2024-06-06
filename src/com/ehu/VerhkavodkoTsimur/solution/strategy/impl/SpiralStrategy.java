@@ -1,9 +1,9 @@
-package compoiteStrategy.strategy.impl;
+package com.ehu.VerhkavodkoTsimur.solution.strategy.impl;
 
-import compoiteStrategy.observer.Observer;
-import compoiteStrategy.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
 
-public class RUPStrategy implements Strategy {
+public class SpiralStrategy implements Strategy {
     private Observer observer;
 
     @Override
@@ -20,6 +20,6 @@ public class RUPStrategy implements Strategy {
 
     @Override
     public String message() {
-        return "RUPStrategy";
+        return "spiralStrategy";
     }
 }

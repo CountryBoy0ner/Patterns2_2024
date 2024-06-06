@@ -1,4 +1,4 @@
-package compoiteStrategy.composite;
+package com.ehu.VerhkavodkoTsimur.solution.composite;
 
 public interface ProjectComponent {
 

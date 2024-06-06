@@ -1,10 +1,11 @@
-package compoiteStrategy.strategy.impl;
+package com.ehu.VerhkavodkoTsimur.solution.strategy.impl;
 
-import compoiteStrategy.observer.Observer;
-import compoiteStrategy.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
 
-public class SpiralStrategy implements Strategy {
+public class AgileStrategy implements Strategy {
     private Observer observer;
+
 
     @Override
     public void execute() {
@@ -20,6 +21,6 @@ public class SpiralStrategy implements Strategy {
 
     @Override
     public String message() {
-        return "spiralStrategy";
+        return "agileStrategy";
     }
 }

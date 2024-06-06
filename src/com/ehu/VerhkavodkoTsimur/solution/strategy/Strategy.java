@@ -1,6 +1,6 @@
-package compoiteStrategy.strategy;
+package com.ehu.VerhkavodkoTsimur.solution.strategy;
 
-import compoiteStrategy.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
 
 public interface Strategy {
     void execute();

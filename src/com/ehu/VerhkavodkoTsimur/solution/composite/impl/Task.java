@@ -1,9 +1,9 @@
-package compoiteStrategy.composite.task.impl;
+package com.ehu.VerhkavodkoTsimur.solution.composite.impl;
 
-import compoiteStrategy.observer.Observer;
-import compoiteStrategy.observer.Subject;
-import compoiteStrategy.strategy.Strategy;
-import compoiteStrategy.composite.ProjectComponent;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Subject;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.composite.ProjectComponent;
 
 import java.util.ArrayList;
 import java.util.List;

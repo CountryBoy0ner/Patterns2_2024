@@ -1,7 +1,7 @@
-package compoiteStrategy.strategy.impl;
+package com.ehu.VerhkavodkoTsimur.solution.strategy.impl;
 
-import compoiteStrategy.observer.Observer;
-import compoiteStrategy.strategy.Strategy;
+import com.ehu.VerhkavodkoTsimur.solution.observer.Observer;
+import com.ehu.VerhkavodkoTsimur.solution.strategy.Strategy;
 
 public class WaterfallStrategy implements Strategy {
     private Observer observer;
