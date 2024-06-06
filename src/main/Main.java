@@ -1,58 +1,61 @@
 package main;
 
-import compoiteStrategy.composite.CompositeTask;
+import compoiteStrategy.composite.task.impl.CompositeProject;
 import compoiteStrategy.strategy.Strategy;
 import compoiteStrategy.strategy.impl.AgileStrategy;
 import compoiteStrategy.strategy.impl.RUPStrategy;
 import compoiteStrategy.strategy.impl.SpiralStrategy;
 import compoiteStrategy.strategy.impl.WaterfallStrategy;
-import compoiteStrategy.task.Task;
-import compoiteStrategy.task.impl.DesignTask;
-import compoiteStrategy.task.impl.DevelopmentTask;
-import compoiteStrategy.task.impl.TestingTask;
+import compoiteStrategy.composite.task.impl.TaskType;
+import compoiteStrategy.composite.task.impl.Task;
 
-import static compoiteStrategy.constant.Constant.*;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Task design = new DesignTask(new AgileStrategy());
-        Task testing = new TestingTask(new RUPStrategy());
-        Task development = new DevelopmentTask(new SpiralStrategy());
-        Task secondDevelopment =  new DevelopmentTask(new WaterfallStrategy());
+        Strategy agileStrategy = new AgileStrategy();
+        Strategy rupStrategy = new RUPStrategy();
+        Strategy spiralStrategy = new SpiralStrategy();
+        Strategy waterfallStrategy = new WaterfallStrategy();
 
+        Task subtask1 = new Task(700, TaskType.DESIGN, agileStrategy);
+        Task subtask2 = new Task(701, TaskType.TESTING, rupStrategy);
+        Task subtask3 = new Task(707, TaskType.DEVELOPMENT, spiralStrategy);
+        Task subtask4 = new Task(777, TaskType.DEVELOPMENT, waterfallStrategy);
+        Task subtask5 = new Task(717, TaskType.DESIGN, rupStrategy);
+        Task subtask6 = new Task(771, TaskType.TESTING, waterfallStrategy);
 
-        CompositeTask project = new CompositeTask("developmentTestingDesignTask");
-        project.addTask(design);
-        project.execute();
+        CompositeProject project = new CompositeProject(1,waterfallStrategy);
+        CompositeProject task1 = new CompositeProject(2,waterfallStrategy);
+        CompositeProject task2 = new CompositeProject(3,waterfallStrategy);
 
-        project.addTask(testing);
-        project.addTask(development);
-        project.execute();
+        project.add(task1);
+        project.add(task2);
+        project.add(subtask1);
+        project.add(subtask6);
 
-        project.removeTask(development);
-        project.addTask(secondDevelopment);
-        project.execute();
+        task1.add(subtask2);
+        subtask1.setStrategy(waterfallStrategy);
+        task1.add(subtask4);
+        task2.add(subtask3);
+        task2.add(subtask5);
 
-        project.removeTask(testing);
-        project.removeTask(design);
-        System.out.println("---");
-        project.getSubtask(0).execute();
+        System.out.println("project status isDone: " + project.checkIfDone());
+        System.out.println("task2 status isDone: " + task2.checkIfDone());
 
+        project.setStrategy(waterfallStrategy);
+        project.getStrategy().execute();
+        System.out.println("project status isDone: " + project.checkIfDone());
+
+        project.setDone(false);
+        subtask1.setDone(false);
+        subtask2.setDone(false);
+        subtask3.setDone(false);
+        subtask4.setDone(false);
+        subtask5.setDone(false);
+        subtask6.setDone(false);
+        System.out.println("project status isDone: " + project.checkIfDone());
+
+        project.setStrategy(agileStrategy);
+        project.getStrategy().execute();
+        System.out.println("project status isDone: " + project.checkIfDone());
     }
 }
-
-
-//    Composite и Strategy:
-//Задача: Разработать систему для управления задачами в проектном менеджере.
-//Описание: Создайте классы для задач разных типов (например, задачи на разработку,
-// тестирование, дизайн). Используйте Composite для объединения задач в древовидную структуру (подзадачи и проекты).
-// Для каждой задачи примените Strategy, чтобы определить,
-// какой алгоритм ее выполнения использовать (н-р, Agile, Waterfall, Spiral, RUP).
-
-//### Вариант 4
-//Создайте систему для обработки заказов с использованием паттернов Factory Method,
-// Composite и Strategy. Factory Method будет создавать различные типы заказов,
-// Composite будет представлять структуру заказа с различными компонентами,
-// а Strategy будет определять способ обработки заказа.
